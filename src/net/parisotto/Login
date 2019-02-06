@@ -1,0 +1,40 @@
+package net.parisotto;
+
+import java.io.Serializable;
+import javax.persistence.*;
+
+
+/**
+ * The persistent class for the LOGIN database table.
+ * 
+ */
+@Entity
+@NamedQuery(name="Login.findAll", query="SELECT l FROM Login l")
+public class Login implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	private long cpf;
+
+	private String senha;
+
+	public Login() {
+	}
+
+	public long getCpf() {
+		return this.cpf;
+	}
+
+	public void setCpf(long cpf) {
+		this.cpf = cpf;
+	}
+
+	public String getSenha() {
+		return this.senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+}
